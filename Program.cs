@@ -65,7 +65,7 @@ namespace StudentManagementSystem
             Console.ResetColor();
         }
 
-               static void ViewAllStudents()
+     static void ViewAllStudents()
         {
             PrintHeader("All Students");
 
@@ -96,6 +96,30 @@ namespace StudentManagementSystem
             Console.WriteLine($"  Total students: {studentCount}");
         }
 
+       static void CalculateAverage()
+        {
+            PrintHeader("Average Grade");
+
+
+            if (studentCount == 0)
+            {
+                ShowError("No students to calculate average for.");
+                return;
+            }
+
+            double sum = 0;
+            for (int i = 0; i < studentCount; i++)
+            {
+                sum += studentGrades[i];
+            }
+
+            double average = sum / studentCount;  // division
+            Console.WriteLine($"  Total students : {studentCount}");
+            Console.WriteLine($"  Sum of grades  : {sum:F2}");
+            Console.ForegroundColor = ConsoleColor.Cyan;
+            Console.WriteLine($"  Average grade  : {average:F2}");
+            Console.ResetColor();
+        }
 
     }
 }
