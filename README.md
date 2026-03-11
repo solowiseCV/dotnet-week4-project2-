@@ -42,18 +42,15 @@ Exits the application cleanly.
 ## How to Run
 
 ### Requirements
-- [.NET SDK](https://dotnet.microsoft.com/download) **or** [Mono](https://www.mono-project.com/)
+- [.NET SDK](https://dotnet.microsoft.com/download) 
 
 ### With .NET SDK
 ```bash
-dotnet-script StudentManagementSystem.cs
+cd StudentManagementSystem.cs
+dotnet run
 ```
 
-### With Mono
-```bash
-mcs StudentManagementSystem.cs -out:sms.exe
-mono sms.exe
-```
+
 
 ---
 
