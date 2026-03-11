@@ -150,5 +150,45 @@ namespace StudentManagementSystem
             Console.WriteLine($"  Enrolled : {(enrolledStatus[index] ? "Yes" : "No")}");
         }
 
+         static void DeleteStudent()
+        {
+            PrintHeader("Delete Student");
+
+            Console.Write("  Enter student ID to delete: ");
+            if (!int.TryParse(Console.ReadLine(), out int id))
+            {
+                ShowError("Please enter a valid integer ID.");
+                return;
+            }
+
+            int index = FindIndex(id);
+            if (index == -1)
+            {
+                ShowError($"Student with ID {id} not found.");
+                return;
+            }
+
+            string name = studentNames[index];
+            Console.Write($"  Are you sure you want to delete '{name}' (ID: {id})? (y/n): ");
+            string confirm = (Console.ReadLine() ?? "").Trim().ToLower();
+
+
+            if (!(confirm == "y"))
+            {
+                Console.WriteLine("  Deletion cancelled.");
+                return;
+            }
+
+            studentIDs.RemoveAt(index);
+            studentNames.RemoveAt(index);
+            studentGrades.RemoveAt(index);
+            enrolledStatus.RemoveAt(index);
+            studentCount--;   // decrement
+
+            Console.ForegroundColor = ConsoleColor.Green;
+            Console.WriteLine($"\n  ✓ Student '{name}' (ID: {id}) deleted successfully.");
+            Console.ResetColor();
+        }
+
     }
 }
