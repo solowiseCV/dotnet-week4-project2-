@@ -168,7 +168,9 @@ namespace StudentManagementSystem
                 return;
             }
 
+
             string name = studentNames[index];
+            
             Console.Write($"  Are you sure you want to delete '{name}' (ID: {id})? (y/n): ");
             string confirm = (Console.ReadLine() ?? "").Trim().ToLower();
 
