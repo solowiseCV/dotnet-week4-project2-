@@ -120,6 +120,35 @@ namespace StudentManagementSystem
             Console.WriteLine($"  Average grade  : {average:F2}");
             Console.ResetColor();
         }
+           static void FindStudentByID()
+        {
+            PrintHeader("Find Student by ID");
+
+            Console.Write("  Enter student ID to search: ");
+            if (!int.TryParse(Console.ReadLine(), out int id))
+            {
+                ShowError("Please enter a valid integer ID.");
+                return;
+            }
+
+            int index = FindIndex(id);
+
+            if (index == -1)
+            {
+                ShowError($"Student with ID {id} not found.");
+                return;
+            }
+
+            string status = studentGrades[index] >= 60 ? "Pass" : "Fail";
+            Console.ForegroundColor = ConsoleColor.Cyan;
+            Console.WriteLine("\n  ── Student Found ──────────────────────────────");
+            Console.ResetColor();
+            Console.WriteLine($"  ID       : {studentIDs[index]}");
+            Console.WriteLine($"  Name     : {studentNames[index]}");
+            Console.WriteLine($"  Grade    : {studentGrades[index]:F2}");
+            Console.WriteLine($"  Status   : {status}");
+            Console.WriteLine($"  Enrolled : {(enrolledStatus[index] ? "Yes" : "No")}");
+        }
 
     }
 }
