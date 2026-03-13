@@ -1,0 +1,43 @@
+================================================================
+WEEK 4 SUBMISSION — Student Management System
+================================================================
+
+Name            : Uche Solomon Ali
+GitHub Username : SolowiseCv
+Repository URL  : https://github.com/solowiseCV/dotnet-week4-project2-
+
+----------------------------------------------------------------
+REFLECTION (What I Learned)
+----------------------------------------------------------------
+Building this Student Management System taught me how to apply
+core C# concepts together in a real project rather than in
+isolation. I learned how important input validation is — using
+TryParse instead of Parse prevents crashes when a user types
+unexpected input. Working with parallel lists showed me how
+keeping data in sync across multiple collections requires care,
+especially when deleting records by index. I also practised
+breaking logic into small helper methods like FindIndex() and
+GetLetterGrade() so that each method has one clear job. The
+bonus challenges pushed me further: implementing selection sort
+on an index array was a great way to understand sorting without
+using built-in shortcuts.
+
+----------------------------------------------------------------
+BONUS CHALLENGES ATTEMPTED
+----------------------------------------------------------------
+[x] Bonus 1 — Grade Letter Assignment (+5 pts)
+      GetLetterGrade() converts any numeric grade to A/B/C/D/F
+      and is displayed in every view: table, student card,
+      average, update confirmation, and sort output.
+
+[x] Bonus 2 — Search by Name (+5 pts)
+      Menu option 8 accepts a partial, case-insensitive search
+      term and prints a card for every matching student.
+      Example: "ali" matches "Alice Johnson".
+
+[x] Bonus 3 — Sort Students (+5 pts)
+      Menu option 9 lets the user sort by Grade (high to low),
+      Name (A to Z), or ID (ascending) using selection sort on
+      an index array so the original data is never reordered.
+
+================================================================
